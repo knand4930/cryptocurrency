@@ -5,7 +5,7 @@ from seedsvalue import encode_base58, wif_to_private_key
 
 
 # Set the BIP39 seed phrase
-seed_phrase = "kit bright arm sleep remind can fold script sea net gun truck"
+seed_phrase = 'sniff you best genius figure oblige cook boat faint crouch race lady'
 
 # Generate the BIP39 seed from the seed phrase
 seed = mnemonic.Mnemonic.to_seed(seed_phrase)

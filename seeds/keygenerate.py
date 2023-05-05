@@ -18,3 +18,18 @@ def generate_public_key(private_key):
 def convert_pub_key(public_key):
     bit_public_key = b'0x04' + public_key
     return bit_public_key.decode()[2:]
+
+# compress public key
+def compress_pub_key(public_key):
+    mid = int(len(public_key) / 2)
+    x = public_key[:mid]
+    # if(int(public_key[-1:]) % 2 == 0):
+    if(int.from_bytes(public_key[-1:], byteorder='big') % 2 == 0):
+        # x = b'0x02' + x
+        x = b'\x02' + x
+    else:
+        # x = b'0x03' + x
+        x = b'\x03' + x
+    return x
+
+    # if (bytearray(public_key)[-1] % 2 == 0):
